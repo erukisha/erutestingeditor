@@ -5,7 +5,7 @@
 
 backend:
   name: github
-  repo: YOUR-USERNAME/YOUR-REPO     # <-- CHANGE ME  (e.g. janedoe/my-site)
+  repo: erukisha/erutestingeditor     # <-- CHANGE ME  (e.g. janedoe/my-site)
   branch: main                      # <-- CHANGE ME if your default branch isn't "main"
   # No base_url / OAuth server needed: you'll log in with a personal access token.
   # (If you later add other editors, deploy the Cloudflare Worker authenticator
