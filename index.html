@@ -1,0 +1,1745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Heit's Point Lutheran Ministries Summer Camp 2026</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Trebuchet MS", Arial, sans-serif;
+  background: #f7fbff;
+}
+
+/* ===== HEADER ===== */
+.title-header {
+  background: linear-gradient(135deg, #0a6cff, #00c2ff);
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.title-header img { height: 110px; }
+
+.title-text {
+  color: white;
+  font-size: 2.8em;
+  font-weight: 900;
+}
+
+/* ===== FESTIVAL ===== */
+.festival-banner {
+  background: linear-gradient(90deg, #ff9a00, #ff6a00);
+  padding: 30px;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* ===== THEME ===== */
+.theme-section {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+
+.theme-title {
+  font-size: 2.6em;
+  font-weight: 900;
+  color: #c0392b;
+}
+
+.theme-verse {
+  font-size: 2.05em; /* larger but still elegant */
+  font-weight: 900;
+  margin: 28px auto;
+  max-width: 1150px;
+  line-height: 1.55;
+}
+
+
+.theme-verse span {
+  opacity: 0;
+  display: inline-block;
+  transform: translateY(16px);
+  animation: verseFade .6s forwards;
+}
+
+@keyframes verseFade {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.theme-reference {
+   font-size: 1.4em;
+   font-weight: bold; 
+  }
+
+/* =========================================
+   FINAL CASE FILE / INVESTIGATION OVERRIDE
+   ========================================= */
+
+.theme-section {
+  /* FORCE background (kills white) */
+  background-color: #f7f1e3 !important;
+  background-image:
+    repeating-linear-gradient(
+    0deg,
+    rgba(0,0,0,0.06),
+    rgba(0,0,0,0.06) 2px,
+    transparent 4px,
+    transparent 16px
+  ) !important;
+
+
+  position: relative;
+  overflow: hidden;
+
+  border-top: 8px solid #c0392b;
+  border-bottom: 8px solid #c0392b;
+
+  padding: 85px 20px 70px;
+}
+
+/* REMOVE any old overlays */
+.theme-section::before,
+.theme-section::after {
+  content: none !important;
+}
+
+/* ======================
+   CASE NUMBER LABEL
+   ====================== */
+.theme-section .case-label {
+  position: absolute;
+  top: 18px;
+  left: 20px;
+
+  background: #c0392b;
+  color: #fff;
+
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 1.5px;
+
+  padding: px 16px;
+  border-radius: 4px;
+
+  transform: rotate(-2deg);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+
+  z-index: 5;
+}
+
+/* ======================
+   BIG RED DOTTED STRING
+   ====================== */
+.theme-section .case-divider {
+  position: absolute;
+  top: 64px;
+  left: 0;
+  right: 0;
+
+  height: 6px;
+
+  background:
+    repeating-linear-gradient(
+      to right,
+      #c0392b,
+      #c0392b 20px,
+      transparent 20px,
+      transparent 34px
+    );
+
+  opacity: 0.95;
+  z-index: 4;
+}
+
+/* ======================
+   CONFIDENTIAL STAMP
+   ====================== */
+.theme-section .theme-verse {
+  position: relative;
+}
+
+.theme-section .theme-verse::after {
+  content: "CONFIDENTIAL";
+  position: absolute;
+  top: -28px;
+  right: -24px;
+
+  color: rgba(192,57,43,0.35);
+  font-weight: 900;
+  font-size: 44px;
+  letter-spacing: 4px;
+
+  transform: rotate(-12deg);
+  pointer-events: none;
+}
+
+
+/* =====================================
+   POLAROID EVIDENCE PHOTOS — FIXED
+   ===================================== */
+
+/* ===== THEME GUTTER LAYOUT ===== */
+.theme-layout {
+  display: grid;
+  grid-template-columns: minmax(160px, 220px) minmax(0, 900px) minmax(160px, 220px);
+  gap: 32px;
+  align-items: start;
+  justify-content: center;
+}
+.theme-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+}
+
+.theme-gutter {
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Polaroids now live INSIDE gutters */
+.theme-gutter .polaroid {
+  position: relative;
+}
+
+
+/* polaroid frame */
+.polaroid {
+  background: #fff;
+  padding: 10px 10px 28px;
+  width: 180px;
+
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+  border-radius: 2px;
+}
+
+/* rotations */
+.polaroid-left .polaroid {
+  transform: rotate(-4deg);
+}
+
+.polaroid-right .polaroid {
+  transform: rotate(3deg);
+}
+
+/* image */
+.polaroid img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* caption */
+.polaroid-caption {
+  margin-top: 6px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555;
+}
+
+/* =====================================
+   REALISTIC THUMBTACKS — VARIED
+   ===================================== */
+
+/* base pin head */
+.polaroid::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at 30% 30%, #ffffff, transparent 35%),
+    radial-gradient(circle at 50% 50%, var(--pin-color), #000);
+
+  box-shadow:
+    0 3px 6px rgba(0,0,0,0.45);
+
+  z-index: 6;
+}
+
+/* pin stem */
+.polaroid::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  width: 2px;
+  height: 12px;
+
+  background: rgba(0,0,0,0.4);
+  z-index: 5;
+}
+
+/* =========================
+   LEFT POLAROID PIN
+   ========================= */
+.polaroid-left .polaroid {
+  --pin-color: #c0392b; /* deep red */
+}
+
+.polaroid-left .polaroid::before,
+.polaroid-left .polaroid::after {
+  left: 38%;
+}
+
+/* =========================
+   RIGHT POLAROID PIN
+   ========================= */
+.polaroid-right .polaroid {
+  --pin-color: #2c5aa0; /* detective blue */
+}
+
+.polaroid-right .polaroid::before,
+.polaroid-right .polaroid::after {
+  left: 62%;
+}
+
+@media (max-width: 900px) {
+  .theme-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .theme-gutter {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .polaroid-wrapper {
+    position: static;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .polaroid-left .polaroid,
+  .polaroid-right .polaroid {
+    transform: rotate(-2deg);
+  }
+}
+
+
+
+.theme-section {
+  position: relative !important;
+}
+
+/* headline emphasis */
+.theme-section h1,
+.theme-section h2 {
+  letter-spacing: 0.03em;
+}
+
+/* verse text feels like a discovered clue */
+.theme-section .verse {
+  position: relative;
+  font-style: italic;
+}
+
+/* dashed investigation divider (if you have one) */
+.theme-section hr {
+  border: none;
+  height: 2px;
+  width: 70%;
+  margin: 24px auto;
+  background-image: repeating-linear-gradient(
+    to right,
+    #3a6ea5,
+    #3a6ea5 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+
+
+/* ===== WEEK STRIPES ===== */
+.week-stripe {
+  padding: 90px 0;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: .8s ease;
+}
+.week-stripe.show { opacity: 1; transform: translateY(0); }
+
+.week-inner {
+  width: 92%;
+  max-width: 1600px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+}
+
+
+
+/* ===== CAMP CARD ===== */
+.camp-card {
+  border-radius: 32px;
+  overflow: hidden;
+  border: 7px solid var(--border);
+  box-shadow: 0 18px 30px rgba(0,0,0,.25);
+  cursor: pointer;
+  background: white;
+  transition: .35s cubic-bezier(.34,1.56,.64,1);
+}
+
+/* ===== CAMP INFO CARD (THEMED) ===== */
+
+.camp-info {
+  padding: 36px 20px 54px;
+  display: flex;
+  justify-content: center;
+
+  /* MATCH summer theme + card section background */
+  background: linear-gradient(
+    180deg,
+    #fff6cc, #fff6cc
+  );
+}
+
+.camp-info-card {
+  max-width: 980px;
+  width: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.75),
+    rgba(245,250,255,0.85)
+  );
+  backdrop-filter: blur(6px);
+  border-radius: 26px;
+  padding: 34px 40px;
+  box-shadow: 0 18px 36px rgba(0,0,0,0.12);
+  border: 4px solid rgba(60,140,200,0.25);
+  text-align: center;
+  font-size: 1.22em;
+  line-height: 1.6;
+  color: #1f2d3d;
+}
+
+.camp-info-card h3 {
+  margin-top: 0;
+  margin-bottom: 18px;
+  font-size: 1.6em;
+  font-weight: 900;
+}
+
+.camp-info-card p {
+  margin: 14px 0;
+}
+
+/* Divider */
+.camp-info-divider {
+  margin: 26px auto 18px;
+  width: 70%;
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #7bb4e3, transparent);
+}
+
+/* Contact line */
+.camp-info-contact {
+  font-size: 1.05em;
+  opacity: 0.9;
+}
+
+.camp-info-contact a {
+  color: #0a6cff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.camp-info-contact a:hover {
+  text-decoration: underline;
+}
+
+/* Mobile tweaks */
+@media (max-width: 700px) {
+  .camp-info-card {
+    padding: 28px 22px;
+    font-size: 1.12em;
+  }
+}
+
+
+
+
+.camp-card:hover {
+  transform: translateY(-12px) scale(1.03);
+}
+
+.camp-image {
+  height: 260px;
+  background-size: cover;
+  background-position: var(--pos);
+  position: relative;
+}
+
+.camp-price-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-weight: 800;
+  font-size: 0.95em;
+}
+
+
+.family-partner-logo {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 120px;
+  background: white;
+  padding: 6px;
+  border-radius: 10px;
+}
+
+.camp-content {
+  padding: 30px;
+}
+
+.camp-content h3 {
+  margin: 0 0 10px;
+  font-size: 2em;
+}
+
+.camp-grades {
+  font-weight: 700;
+  margin-top: 4px;
+  color: #555;
+}
+
+.details-title {
+  font-size: 2.4em;
+  font-weight: 900;
+  margin-bottom: 4px;
+
+  white-space: nowrap;       /* force single line */
+  overflow: hidden;          /* prevent spill */
+  text-overflow: ellipsis;   /* safety for very small screens */
+}
+
+.details-dates {
+  font-size: 1.1em;
+  font-weight: 700;
+  opacity: 0.8;
+  margin-bottom: 10px;
+}
+
+.details-meta {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 18px;
+  font-weight: 800;
+  font-size: 1.1em;
+}
+
+.details-price {
+  color: #0a6cff;
+}
+
+.details-grades {
+  color: #555;
+}
+
+@media (max-width: 600px) {
+  .details-title {
+    font-size: 1.9em;
+  }
+}
+
+
+/* ===== COPY TO CLIPBOARD TOAST ===== */
+
+.copy-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0a6cff;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95em;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 9999;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-8px);
+}
+
+
+/* ===== EXPANDED WEEK ===== */
+.week-details {
+  margin: 40px auto 80px;
+  padding: 50px;
+  max-width: 1600px;
+  border-radius: 32px;
+  border: 7px solid var(--border);
+  background: linear-gradient(135deg, var(--stripe), #fff);
+  animation: expand .5s ease;
+}
+
+@keyframes expand {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+}
+
+.slideshow {
+  height: 360px;
+  border-radius: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+/* ===== SLIDESHOW SLIDE ANIMATION ===== */
+
+.slideshow {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s ease;
+}
+
+/* Current visible slide */
+.slide.active {
+  transform: translateX(0);
+  z-index: 2;
+}
+
+/* Incoming slide (off-screen left) */
+.slide.next {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+
+
+.register-btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 18px 40px;
+  background: #0a6cff;
+  color: white;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+}
+
+/* ===== STAFF ===== */
+.staff-title {
+  position: relative;
+  text-align: center;
+  font-size: 3em;
+  font-weight: 900;
+  padding: 60px 20px 40px;
+  background: linear-gradient(135deg, #3cb371, #2e8b57);
+  color: white;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.staff-title > * {
+  position: relative;
+  z-index: 2; /* text ALWAYS above trees */
+}
+
+/* Tree silhouette layer */
+.staff-title::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("treesilo.png");
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: auto 130px;
+  opacity: 0.35;
+  filter: brightness(0.35) saturate(1.6) contrast(1.1);
+  z-index: 0; /* trees */
+}
+
+
+/* Keep text above trees */
+.staff-title > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+.staff-section {
+  padding: 90px 20px;
+  color: white;
+}
+
+/* ===== STAFF SECTION CORNER BADGE ===== */
+
+.staff {
+  position: relative;
+}
+
+.staff .section-badge {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  width: 225px;
+  height: auto;
+  z-index: 5;
+}
+
+/* Mobile adjustment */
+@media (max-width: 900px) {
+  .staff .section-badge {
+    width: 180px;
+    bottom: 14px;
+    right: 14px;
+  }
+}
+
+
+.staff-inner {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+/* ===== TEXT OFFSET FOR STAFF SECTIONS ===== */
+
+/* Counselor & Church Worker: push text right */
+.staff .staff-text,
+.worker .staff-text {
+  padding-left: 40px;
+}
+
+/* Keep Junior Counselor mirrored */
+.junior .staff-text {
+  padding-left: 0;
+  padding-right: 40px;
+}
+
+/* ===== STAFF IMAGE POSITIONING ===== */
+
+/* Counselor (Summer Staff): photo LEFT */
+.staff .staff-image {
+  order: 1;
+}
+.staff .staff-inner > div:last-child {
+  order: 2;
+}
+
+/* Junior Counselor: photo RIGHT */
+.junior .staff-image {
+  order: 2;
+}
+.junior .staff-inner > div:last-child {
+  order: 1;
+}
+
+/* Church Worker: photo LEFT */
+.worker .staff-image {
+  order: 1;
+}
+.worker .staff-inner > div:last-child {
+  order: 2;
+}
+
+
+.staff-image {
+  display: inline-block;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px rgba(0,0,0,.35);
+  outline: 5px solid rgba(255,255,255,.6);
+  outline-offset: -10px;
+}
+
+.staff-image img {
+  display: block;
+  max-width: 100%;
+  height: auto;          /* ✅ exact image height */
+  width: auto;           /* ✅ exact image width */
+  border-radius: 24px;
+}
+
+/* ===== STAFF IMAGE ZOOM (IMG-BASED) ===== */
+
+.staff-image img {
+  transform-origin: center center;
+  transition: transform 0.6s ease;
+}
+
+/* Counselor – zoom out a little */
+.staff img {
+  transform: scale(0.95);
+}
+
+/* Junior Counselor – zoom out a little */
+.junior img {
+  transform: scale(0.95);
+}
+
+/* Church Worker – zoom out a lot */
+.worker img {
+  transform: scale(0.95);
+}
+
+
+.staff-steps {
+  font-size: 1.15em;
+  line-height: 1.7;
+}
+
+.apply-btn {
+  margin-top: 30px;
+  padding: 16px 34px;
+  background: white;
+  color: #222;
+  font-weight: bold;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+.staff { background: linear-gradient(135deg, #ff5858, #ff8c42); }
+.junior { background: linear-gradient(135deg, #5b86e5, #36d1dc); }
+.worker { background: linear-gradient(135deg, #8e2de2, #4a00e0); }
+
+@media (max-width: 900px) {
+  .staff .staff-text,
+  .worker .staff-text,
+  .junior .staff-text {
+  padding-left: 0;
+  padding-right: 0;
+  }
+  .week-inner, .details-grid, .staff-inner {
+    grid-template-columns: 1fr;
+  }
+  
+}
+
+/* ===== ART vs ALL CAMP CHOICE ===== */
+
+.choice-wrapper {
+  margin-top: 24px;
+}
+
+.choice-title {
+  text-align: center;
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 900;
+  color: #c40000; /* strong camp red */
+  margin: 10px 0 20px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+
+}
+
+.dual-camp {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.camp-or {
+  align-self: center;
+  font-size: 2.2em;
+  font-weight: 900;
+  opacity: 0.6;
+}
+
+.camp-option {
+  background: rgba(255,255,255,0.95);
+  border: 3px solid var(--border);
+  border-radius: 18px;
+  padding: 20px 22px;
+}
+
+.option-price {
+  font-size: 1.3em;
+  font-weight: 900;
+  margin: 6px 0 12px;
+  color: var(--border);
+}
+
+/* Mobile stacking */
+@media (max-width: 900px) {
+  .dual-camp {
+    grid-template-columns: 1fr;
+  }
+
+  .camp-or {
+    text-align: center;
+    margin: 12px 0;
+  }
+}
+
+
+/* ============================
+   WHAT TO BRING — FINAL THEME
+   ============================ */
+
+.what-to-bring {
+  padding: 70px 30px;
+  background: linear-gradient(to bottom, #f5efe2, #f7f3e8);
+}
+
+.what-to-bring h2 {
+  text-align: center;
+  font-size: 2.5em;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.what-to-bring-outer {
+  width: 100%;
+}
+
+
+.bring-intro {
+  text-align: center;
+  font-size: 1.1em;
+  max-width: 720px;
+  margin: 0 auto 40px;
+  opacity: 0.9;
+}
+
+.what-to-bring h2,
+.bring-intro {
+  text-align: center;
+}
+
+.what-to-bring-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+.what-to-bring-inner h2 {
+  text-align: center;
+}
+.bring-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 24px;
+
+  align-items: start; /* ⬅️ IMPORTANT */
+}
+
+@media (max-width: 800px) {
+  .bring-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* WHAT TO BRING BOX */
+.bring-box {
+  background: rgba(255,255,255,0.9);
+  border-radius: 22px;
+  padding: 26px 30px;
+  border: 4px solid rgba(0,0,0,0.08);
+}
+
+.bring-title {
+  font-size: 1.6em;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.bring-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bring-list li {
+  padding: 10px 0;
+  font-size: 1.05em;
+  line-height: 1.45;
+}
+
+
+
+/* DON'T BRING — RED WARNING BOX */
+.leave-box {
+  background: #ffeaea;
+  border-radius: 22px;
+  padding: 24px;
+  border: 4px solid #c0392b;
+}
+
+.leave-box h3 {
+  margin-top: 0;
+  font-size: 1.5em;
+  font-weight: 900;
+  margin-bottom: 14px;
+  color: #a83224;
+}
+
+.leave-box ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.leave-box li {
+  margin-bottom: 10px;
+  font-size: 1.05em;
+}
+
+.bring-box {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.what-to-bring h2,
+.bring-intro {
+  text-align: center;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .bring-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .bring-box,
+  .leave-box {
+    padding: 22px;
+  }
+}
+
+.med-box {
+  background: #fff8f0;
+  border-radius: 22px;
+  padding: 20px;
+  border: 3px dashed #c0392b;
+  text-align: center;
+}
+
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.med-box h3 {
+  margin-top: 0;
+  font-size: 1.3em;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.med-box img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.med-box a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.med-caption {
+  font-size: 0.95em;
+  opacity: 0.85;
+}
+/* ============================
+   PAY FOR CAMP BANNER
+   ============================ */
+
+.pay-banner {
+  width: 100%;
+  padding: 36px 20px;
+  background: linear-gradient(135deg, #1e7f4f, #2da56a);
+  text-align: center;
+}
+
+.pay-link {
+  display: inline-block;
+  font-size: 1.8em;
+  font-weight: 900;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 18px 40px;
+  border-radius: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pay-link:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+}
+
+/* ============================
+   SUMMER SCHOLARSHIP BANNER
+   ============================ */
+
+.scholarship-banner {
+  width: 100%;
+  padding: 36px 20px;
+  background: linear-gradient(135deg, #3a7bd5, #00d2ff);
+  text-align: center;
+}
+
+.scholarship-link {
+  display: inline-block;
+  font-size: 1.8em;
+  font-weight: 900;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 18px 40px;
+  border-radius: 60px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 3px solid rgba(255,255,255,0.4);
+  backdrop-filter: blur(6px);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.scholarship-link:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.3);
+}
+
+/* ============================
+   ART CAMP / ALL CAMP SPLIT
+   ============================ */
+
+.dual-camp {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 28px;
+  margin-top: 20px;
+  align-items: start;
+}
+
+.camp-option {
+  background: rgba(255,255,255,0.9);
+  padding: 20px 22px;
+  border-radius: 16px;
+  border: 3px solid var(--border);
+}
+
+.camp-option h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+  font-weight: 900;
+}
+
+.camp-or {
+  font-size: 2em;
+  font-weight: 900;
+  align-self: center;
+  opacity: 0.6;
+}
+
+/* Mobile */
+@media (max-width: 800px) {
+  .dual-camp {
+    grid-template-columns: 1fr;
+  }
+
+  .camp-or {
+    text-align: center;
+    margin: 12px 0;
+  }
+}
+
+.option-price {
+  font-size: 1.3em;
+  font-weight: 900;
+  margin: 6px 0 12px;
+  color: #1e7f4f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="title-header">
+  <img src="CampLogo.png">
+  <div class="title-text">Heit's Point Lutheran Ministries<br>Summer Camp 2026</div>
+</div>
+
+<div class="festival-banner">
+  🎉 June 6 — Heit's Point Lutheran Outdoor Festival! 🎉
+</div>
+
+<section class="theme-section">
+  <div class="case-label">CASE #2026 — SEEK YE FIRST</div>
+  <div class="case-divider"></div>
+<div class="theme-layout">
+
+  <div class="theme-gutter left-gutter">
+    <div class="polaroid">
+      <img src="cross.png" alt="Cross - Seek Ye First">
+      <div class="polaroid-caption">Key Evidence</div>
+    </div>
+  </div>
+
+  <div class="theme-content">
+    <div class="theme-title">Summer Theme: “Seek Ye First”</div>
+    <div class="theme-verse" id="animatedVerse"></div>
+    <div class="theme-reference">Jeremiah 29:13</div>
+  </div>
+
+  <div class="theme-gutter right-gutter">
+    <div class="polaroid">
+      <img src="camp.png" alt="Heit's Point Camp">
+      <div class="polaroid-caption">Camp Grounds</div>
+    </div>
+  </div>
+
+</div>
+</div>
+
+</section>
+
+<section class="camp-info">
+  <div class="camp-info-card">
+    <h3>Summer Camp Info</h3>
+
+    <p>
+      <strong>Our weeklong camps all start on Sundays</strong> with registration
+      between <strong>4–5 pm</strong>.
+    </p>
+
+    <p>
+      Most programs end on <strong>Friday at 2pm!</strong> with a
+      special program for family members!
+    </p>
+
+    <p class="camp-info-note">
+      Grades listed below are the grades the student is entering in the fall.
+    </p>
+    <hr class="camp-info-divider">
+
+<p class="camp-info-contact">
+  Any questions? Contact our Program Director,
+  <strong>Jake Schniepp</strong>, at
+  <a href="#" class="copy-link" data-copy="HeitsPointSummerCamp@gmail.com">
+    HeitsPointSummerCamp@gmail.com
+  </a>
+  or
+  <a href="#" class="copy-link" data-copy="2174547857">
+    (217) 454-7857
+  </a>
+</p>
+
+  </div>
+</section>
+
+
+
+<div id="campContainer"></div>
+<section class="pay-banner">
+  <a
+    href="http://paypal.com/us/fundraiser/charity/1400928"
+    target="_blank"
+    rel="noopener"
+    class="pay-link"
+  >
+    Click here to pay for Camp
+  </a>
+</section>
+
+<section class="scholarship-banner">
+  <a
+    href="https://drive.google.com/file/d/1lAMF0mGpbBZBrF2gzWhrUIdrVldncr9E/view?usp=drive_link"
+    target="_blank"
+    rel="noopener"
+    class="scholarship-link"
+  >
+     Click here to apply for Summer Scholarships
+  </a>
+</section>
+<div class="staff-title">
+  <span>Want to serve this summer?</span>
+</div>
+
+
+<section class="staff-section staff">
+  <div class="staff-inner">
+    <div class="staff-image">
+  <img src="StaffPhoto.png" alt="Summer Staff">
+    </div>
+
+    <div>
+      <h2>Summer Staff</h2>
+      <div class="staff-steps">
+        <ol>
+          <li>Be a College aged individual</li>
+          <li>Have a good Attitude and a Heart ready to serve!</li>
+          <li>Click on "Apply now" or head on over to <a href="https://nloma.org/employment/summer/">NLOMA </a></li>
+          <li>Click "Start Your Journey Today"</li>
+          <li>Fill out all the information</li>
+          <li>In Employment Prefences Put "Heit's Point Lutheran Ministries" as your 1st Choice!</li>
+          <li>Submit it and wait to be contacted!</li>
+        </ol>
+      </div>
+      <a href="https://nloma.org/employment/summer/" target="_blank" rel="noopener" class="apply-btn">
+        Apply Now
+      </a>
+    </div>
+  </div>
+  <img src="NLOMA.png" alt="NLOMA" class="section-badge">
+</section>
+
+<section class="staff-section junior">
+  <div class="staff-inner">
+    <div class="staff-image">
+  <img src="JCPhoto.png" alt="Junior Counselors">
+</div>
+    <div>
+      <h2>Junior Counselor</h2>
+      <div class="staff-steps">
+        <ol>
+         <li>Have at least your freshman year of high school finished!</li>
+          <li>Have a good Attitude and a Heart ready to serve!</li>
+          <li>Click the "Get Application" Button!</li>
+          <li>Fill it all out and agree to the policy form!</li>
+          <li>Email it to HeitsPointSummerCamp@gmail.com</li>
+        </ol>
+      </div>
+      <a href="JCApp.pdf" download class="apply-btn">
+      Get Application
+    </a>
+    </div>
+  </div>
+</section>
+
+<section class="staff-section worker">
+  <div class="staff-inner">
+    <div class="staff-image">
+  <img src="ChurchWorker.png" alt="Churck Worker">
+</div>
+    <div>
+      <h2>Church Worker for the Week</h2>
+      <div class="staff-steps">
+        <ol>
+          <li>Be wanting to help spread God's Love</li>
+          <li>Be Willing to lead staff devotions!</li>
+          <li>If you are a Pastor, Leading our Wednesday Morning Service!</li>
+          <li>Email interest to HeitsPointSummerCamp@gmail.com</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="what-to-bring-outer">
+  <div class="what-to-bring-inner">
+  <h2>🧳 What to Bring to Camp</h2>
+
+  <p class="bring-intro">
+    Please make sure you bring the following items:
+  </p>
+  <div class="bring-grid">
+
+  <div class="bring-box">
+    <h3 class="bring-title">✅ What to Bring</h3>
+    <ul class="bring-list">
+      <li>📖 Bible</li>
+      <li>😄 <strong>GOOD attitude!!</strong></li>
+      <li>👖 Long pants</li>
+      <li>🩳 Shorts – must come to at least the tip of your thumb when arms are down</li>
+      <li>👕 T-shirts with God-pleasing words/pictures</li>
+      <li>👚 Tank tops are ok – NO spaghetti straps; <strong>MODESTY is the goal!</strong></li>
+      <li>🛁 Towels and toiletries</li>
+      <li>🧦 Undergarments and socks</li>
+      <li>🧥 Jacket or sweatshirt; rain jacket if you can</li>
+      <li>👟 Tennis shoes and flip flops</li>
+      <li>🏊 Swimsuit – girls: one piece; boys: knee-length</li>
+      <li>🛏️ Sleeping bag or bedding for a twin bed and pillow</li>
+      <li>☀️ Sunscreen and sunglasses; hat if you want</li>
+      <li>🚰 Water bottle</li>
+      <li>🥾 OLD shoes and clothes that can get <strong>MUDDY</strong></li>
+      <li>📷 Camera</li>
+      <li>🔦 Flashlight</li>
+      <li>💊 Medications – give to the director at check-in (day-of-the-week sorter preferred; <strong>NOT allowed in cabins</strong>)</li>
+    </ul>
+  </div>
+  <div class="right-column">
+
+  <div class="leave-box">
+    <h3>🚫 What to Leave at Home</h3>
+    <ul>
+      <li>🍪 Snacks (we have a great cook — and no critters in cabins!)</li>
+      <li>🎆 Fireworks</li>
+      <li>📱 Cell phones and electronic devices</li>
+      <li>💍 Jewelry or expensive toys, pens, etc.</li>
+      <li>🔪 Weapons — including pocket knives</li>
+      <li>💦 Squirt guns</li>
+      <li>🐶 Pets</li>
+    </ul>
+  </div>
+
+<div class="med-box">
+  <h3>💊 Medicine Box Example</h3>
+
+  <a href="https://www.amazon.com/Amazon-Basic-Care-Organizer-Neutral/dp/B0BFRTM2R5/ref=sr_1_1_ffob_sspa?rdc=1&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY"
+     target="_blank"
+     rel="noopener">
+     
+    <img src="MedBox.png" alt="Medication organizer example">
+    <p class="med-caption">Click to view an example of an acceptable medication organizer</p>
+  </a>
+</div>
+</div>
+
+</div>
+
+  
+  </div>
+</section>
+
+<footer style="background:linear-gradient(135deg,#1f3b2d,#2e5a43); color:#f5f1e8; padding:35px 15px; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <div style="max-width:1100px; margin:0 auto;">
+
+    <!-- Title -->
+    <div style="text-align:center; margin-bottom:25px;">
+      <h2 style="margin:0; font-size:26px; letter-spacing:1px; color:#f3d58a;">
+        HEIT'S POINT LUTHERAN MINISTRIES
+      </h2>
+    </div>
+
+    <!-- Content -->
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:25px; font-size:14px;">
+
+      <!-- Mission -->
+      <div style="flex:1; min-width:220px;">
+        <h3 style="margin-bottom:8px; font-size:16px; color:#f3d58a;">Mission</h3>
+        <p style="margin:0; line-height:1.6;">
+          Strengthening your Connection with Christ, the Vine
+        </p>
+        <p style="margin-top:4px; font-size:13px; color:#d8c9a8;">
+          John 15:5
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div style="flex:1; min-width:220px;">
+        <h3 style="margin-bottom:8px; font-size:16px; color:#f3d58a;">Contact</h3>
+
+        <p style="margin:0 0 6px;">
+          28345 Heits Point Ave.<br>
+          Lincoln, MO 65338
+        </p>
+
+        <p style="margin:0 0 6px;">
+          <a href="tel:6606682363" style="color:#f5f1e8; text-decoration:none;">
+            📞 660-668-2363
+          </a>
+        </p>
+
+        <p style="margin:0;">
+          <a href="mailto:info@heitspointlutheran.org" style="color:#f5f1e8; text-decoration:none;">
+            ✉️ info@heitspointlutheran.org
+          </a>
+        </p>
+      </div>
+
+      <!-- Social -->
+      <div style="flex:1; min-width:180px;">
+        <h3 style="margin-bottom:8px; font-size:16px; color:#f3d58a;">Follow</h3>
+
+        <!-- Facebook -->
+        <a href="https://www.facebook.com/heitspointlutherancamp" target="_blank"
+           style="display:flex; align-items:center; gap:8px; margin-bottom:8px; text-decoration:none; color:#f5f1e8;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H7.9v-2.9h2.6V9.4c0-2.6 1.5-4 3.8-4 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.7-1.6 1.5v1.8h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/>
+          </svg>
+          Facebook
+        </a>
+
+        <!-- Instagram -->
+        <a href="https://www.instagram.com/heitspointlutheran/" target="_blank"
+           style="display:flex; align-items:center; gap:8px; text-decoration:none; color:#f5f1e8;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10zm-5 3.5A5.5 5.5 0 1 0 17.5 13 5.5 5.5 0 0 0 12 7.5zm0 9A3.5 3.5 0 1 1 15.5 13 3.5 3.5 0 0 1 12 16.5zM17.8 6.2a1.2 1.2 0 1 0 1.2 1.2 1.2 1.2 0 0 0-1.2-1.2z"/>
+          </svg>
+          Instagram
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+
+
+<script>
+/* THEME VERSE */
+const verse = "Seek God and find Him when you seek Him with all your heart.";
+const verseEl = document.getElementById("animatedVerse");
+verse.split(" ").forEach((w,i)=>{
+  const s=document.createElement("span");
+  s.innerHTML=w+"&nbsp;";
+  s.style.animationDelay=`${i*0.15}s`;
+  verseEl.appendChild(s);
+});
+
+/* CAMP DATA */
+const campWeeks=[
+{title:"🎨 Week 1 – Art Camp & ALL Camp",dates:"June 7–12", grades:"Grades: 3rd-9th",price:"$575 Art Camp $550 All Camp",short:"Join us as we explore nature, creating beautiful art, and studying God's Word!",artCamp: {
+  title: "Art Camp",
+   price: "$575",
+  text: "Campers will learn a variety of art techniques while working on different crafts and creative projects to showcase at the art show during the closing program. Throughout the week, campers will explore the beauty of God’s creation and grow in their appreciation for all He has done—and continues to do—for us, alongside many other fun activities."
+},
+allCamp: {
+  title: "All Camp",
+  price: "$550",
+  text: "The All Camp option offers campers a full, well-rounded camp experience that includes all the best traditions of Heit’s Point. Campers will spend their days swimming at the lake, playing organized games, participating in worship and Bible studies, gathering around campfires, and enjoying a variety of outdoor adventures.\n\nThis option is ideal for campers who want a classic summer camp experience centered on faith, friendship, and fun. "
+},photo:"Week1Photo.png",folder:"Week1",pos:"center",stripe:"#fff4cc",border:"#e0b300"},
+{title:"👨‍👩‍👧‍👦 Week 2 – Family Discipleship Camp w/ Concordia Center for the Family",grades:`ALL ages welcomed, even toddlers!<br>
+<a href="https://www.concordiacenterforthefamily.org/" target="_blank" rel="noopener" style="font-weight:700;color:#1b5fa7;text-decoration:underline;">
+Concordia Center for the Family
+</a>`, partnerLink: "https://www.concordiacenterforthefamily.org/", register: "https://forms.gle/T5puuHtcACyLJqpp7",dates:"June 15–19",price:"$350/Adult + $100/Kid",short:"Enjoy a week with the family and learn about Family Discipleship w/ Pastor Todd Biermann and Concordia Center for the family! ",long:"Come enjoy a fun and meaningful experience at camp with your children while being equipped and inspired to grow in faith within your own family and strengthen the families you serve. Pastor Biermann will lead parents and church workers in Bible study and discipleship focused on faith at home, while children are cared for by our summer camp counselors. Families will also enjoy time together swimming, playing, worshiping, singing, and building lasting memories. Family pricing is $350 per adult and $100 per child, with children ages 2 and under attending free. Pricing includes a private hotel-style room or cabin, meals, Pastor Biermann, camp counselors and childcare, boating, swimming, fishing, disc golf, campfires, activities, and more. Lower-cost options are available for RV, bunkhouse, or tent camping, with RV stays at $250 per adult and tent camping at $225 per adult.",photo:"Week2Photo.png",folder:"Week2",pos:"center top",stripe:"#e6f4ff",border:"#4fa6ff",partner:true},
+{title:"🕳️ Week 3 – Caving Week w/ Paintball",dates:"June 21–26", grades:"Grades: 3rd-9th",price:"$575",short:"Explore Jacob’s Caves with us as we learn about God and enjoy fun activities together.",long:"Join us for our new Caving Camp, where campers will embark on an exciting offsite adventure to explore Jacob’s Caverns during a guided cave crawl. Throughout the week, campers will grow in their faith as they explore God’s amazing Word, enjoy fun games, and take part in engaging activities designed to encourage learning, teamwork, and adventure. This unique camp experience blends hands-on exploration with faith-filled fun and unforgettable memories.",photo:"Week3Photo.png",folder:"Week3",pos:"center",stripe:"#e9fbf1",border:"#38c77b"},
+{title:"🧭 Week 4 – Discovery Week",dates:"June 28–30", grades:"Grades: K-4th",price:"$250",short:"A smaller, adventure-filled mini week perfect for younger children who have never been to camp before!",long:"Created just for kids looking for a “small adventure,” this short week is perfect for Kindergarteners through 3rd graders! Campers will enjoy gentle adventures, fun activities, and meaningful moments learning about God’s love in a safe, encouraging camp environment. Parents or grandparents may stay on camp property by renting a hotel-style room or cabin, allowing young campers to explore, grow in confidence, and make joyful faith-filled memories—while family stays close by.",photo:"Week4Photo.png",folder:"Week4",pos:"center bottom",stripe:"#f2ecff",border:"#9d7cff"},
+{title:"🏀 Week 5 – Basketball Camp & ALL Camp",dates:"July 5–10",grades:"Grades: 3rd-9th",price:"$575 Basketball Camp $550 All Camp",short:"Choose between focused basketball training or the classic All Camp experience!",
+
+basketballCamp: {
+  title: "Basketball Camp",
+  price: "$575",
+  text: "Our Basketball Camp is back with Coach Hawkeye! Campers will learn what it means to be a Christian athlete while fine-tuning existing basketball skills and developing new ones through focused instruction, drills, teamwork, and competition. Throughout the week campers will also participate in Bible studies, worship, games, and other camp activities."
+},
+
+allCamp: {
+  title: "All Camp",
+  price: "$550",
+  text: "The All Camp option offers campers a full, well-rounded camp experience that includes all the best traditions of Heit's Point. Campers will spend their days swimming at the lake, playing organized games, participating in worship and Bible studies, gathering around campfires, and enjoying a variety of outdoor adventures. This option is ideal for campers who want a classic summer camp experience centered on faith, friendship, and fun."
+},
+
+photo:"Week5Photo.png",
+folder:"Week5",
+pos:"center",
+stripe:"#fff0f0",
+border:"#ff6b6b"
+},
+{title:"🛠️ Week 6 – Servant Event",dates:"July 12–17",register: "https://forms.gle/NfXRYjxAtaV1Z1vp8", grades:"Middle school and High schoolers",price:"$350",short:"Middle and high schoolers—join us and DCE Daniel Meyer (and his new church) to paint, rebuild, and serve the Lincoln or Warsaw community with other young people who love God and serving others!",long:"Join us and DCE Daniel Meyer (and his new church) as we paint around the camp, rebuild areas in need of tender loving care, and serve members of the Lincoln or Warsaw community. Campers will work alongside other young people who love God and have a heart for serving others, growing in faith while making a meaningful impact.",photo:"Week6Photo.png",folder:"Week6",pos:"center",stripe:"#eefaf0",border:"#4caf50"},
+{title:"💦 Week 7 – Water Week",dates:"July 19–24", grades:"Grades: 3rd-9th",price:"$575",short:"Love the water? Love God? Join us for Water Week—packed with fun water activities and a trip to Super Splash!",long:"Let’s make a splash—one of our favorite weeks is back! Join us for an action-packed, water-filled week featuring an exciting offsite trip to Super Splash. Campers will enjoy a variety of fun water activities alongside engaging games, meaningful Bible studies, and plenty of time for fellowship and laughter. This week is the perfect blend of summer fun, faith growth, and unforgettable memories at camp.",photo:"Week7Photo.png",folder:"Week7",pos:"center top",stripe:"#e6f9ff",border:"#00bcd4"},
+];
+
+const container=document.getElementById("campContainer");
+
+for(let i=0;i<campWeeks.length;i+=2){
+  const stripe=document.createElement("div");
+  stripe.className="week-stripe";
+  stripe.style.background=campWeeks[i].stripe;
+  stripe.innerHTML=`
+    <div class="week-inner">
+      ${campWeeks.slice(i,i+2).map((c,idx)=>`
+      <div class="camp-card" style="--border:${c.border}"
+        onclick="toggleWeek(${i+idx},${Math.floor((i+idx)/2)})">
+       <div class="camp-image" style="background-image:url('${c.photo}');--pos:${c.pos}">
+          <div class="camp-price-badge">${c.price}</div>
+         ${c.partner ? `
+  ${c.partnerLink
+    ? `<a href="${c.partnerLink}" target="_blank" rel="noopener">
+         <img src="FamilyPartner.png" class="family-partner-logo">
+       </a>`
+    : `<img src="FamilyPartner.png" class="family-partner-logo">`
+  }
+` : ""}
+
+         </div>
+
+        <div class="camp-content">
+          <h3>${c.title}</h3>
+          <strong>${c.dates}</strong>
+          <div class="camp-grades">${c.grades}</div>
+          <p>${c.short}</p>
+        </div>
+
+      </div>`).join("")}
+    </div>`;
+  container.appendChild(stripe);
+}
+
+
+/* EXPAND */
+let open=null;
+function toggleWeek(i,row){
+  const existing = document.querySelector(".week-details");
+
+if (existing) {
+  existing.remove();
+
+  // If clicking the same card, just close it
+  if (open === i) {
+    open = null;
+    return;
+  }
+}
+
+// If we get here, we're opening a NEW card
+open = i;
+  const w=campWeeks[i];
+  const sec=document.createElement("section");
+  sec.className="week-details";
+  sec.style.setProperty("--border",w.border);
+  sec.style.setProperty("--stripe",w.stripe);
+  sec.innerHTML=`
+              <div class="slideshow">
+            <div class="slide active" style="background-image:url('${w.photo}')"></div>
+          </div>
+
+                <div>
+                  <h2 class="details-title">
+            ${w.title}
+          </h2>
+
+          <div class="details-dates">
+            ${w.dates}
+          </div>
+
+          <div class="details-meta">
+            <span class="details-price">${w.price}</span>
+            <span class="details-grades">${w.grades}</span>
+          </div>
+
+        ${
+        (w.artCamp && w.allCamp) || (w.basketballCamp && w.allCamp)
+        ? `
+            <div class="choice-wrapper">
+
+  <div class="choice-title">YOUR CHOICE!</div>
+
+            <div class="dual-camp">
+              <div class="camp-option">
+            <h3>${(w.artCamp || w.basketballCamp).title}</h3>
+                <div class="option-price">${(w.artCamp || w.basketballCamp).price}</div>
+                <p>${(w.artCamp || w.basketballCamp).text}</p>
+              </div>
+
+              <div class="camp-or">OR</div>
+
+              <div class="camp-option">
+                <h3>${w.allCamp.title}</h3>
+                <div class="option-price">${w.allCamp.price}</div>
+                <p>${w.allCamp.text}</p>
+              </div>
+            </div>
+
+    </div>`
+
+        : `<p>${w.long}</p>`
+        }
+
+        <a class="register-btn"
+          href="${w.register || 'https://forms.gle/ce9UvyG86crXzrrS8'}"
+          target="_blank">
+          Register Now
+        </a>
+      </div>
+    </div>`;
+  document.querySelectorAll(".week-stripe")[row].after(sec);
+  
+            requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              sec.scrollIntoView({
+                behavior: "smooth",
+                block: "end"
+              });
+            });
+          });
+}
+
+/* FADE IN */
+const obs=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add("show")),{threshold:.15});
+document.querySelectorAll(".week-stripe").forEach(el=>obs.observe(el));
+</script>
+
+
+<script>
+  const copyLinks = document.querySelectorAll('.copy-link');
+
+  let toast;
+
+  function showToast(message) {
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'copy-toast';
+      document.body.appendChild(toast);
+    }
+
+    toast.textContent = message;
+    toast.classList.add('show');
+
+    clearTimeout(toast.hideTimer);
+    toast.hideTimer = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 1200);
+  }
+
+  copyLinks.forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const text = link.dataset.copy;
+
+      navigator.clipboard.writeText(text).then(() => {
+        showToast('Copied to clipboard');
+      });
+    });
+  });
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
