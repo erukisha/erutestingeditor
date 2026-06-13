@@ -1,0 +1,36 @@
+# ============================================================
+#  Sveltia CMS configuration
+#  Edit the two CHANGE ME lines, commit, and you're set.
+# ============================================================
+
+backend:
+  name: github
+  repo: YOUR-USERNAME/YOUR-REPO     # <-- CHANGE ME  (e.g. janedoe/my-site)
+  branch: main                      # <-- CHANGE ME if your default branch isn't "main"
+  # No base_url / OAuth server needed: you'll log in with a personal access token.
+  # (If you later add other editors, deploy the Cloudflare Worker authenticator
+  #  and add:  base_url: https://your-worker.workers.dev )
+
+# Where images you upload in the editor are stored in the repo,
+# and the URL they resolve to on the live site.
+media_folder: assets/uploads
+public_folder: /assets/uploads
+
+# A friendly editor experience: each "Content Page" is one Markdown file
+# in the /content folder. Title + a rich-text body, no code required.
+collections:
+  - name: pages
+    label: Content Pages
+    label_singular: Content Page
+    folder: content
+    create: true
+    delete: true
+    extension: md
+    format: frontmatter
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    fields:
+      - { label: Title, name: title, widget: string }
+      - label: Body
+        name: body
+        widget: markdown
